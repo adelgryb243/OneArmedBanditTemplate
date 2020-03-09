@@ -11,9 +11,14 @@ namespace OneArmedBandit
 {
     public partial class Form1 : Form
     {
-        // random number generator
-
-        // int value for score initialized to 10
+       //1 is cherry, 2 is diamond, 3is 7
+        Random rng = new Random();
+       
+        int score = 10;
+        
+        int reelOne;
+        int reelTwo;
+        int reelThree;
 
 
         public Form1()
@@ -23,17 +28,61 @@ namespace OneArmedBandit
 
         private void spinButton_Click(object sender, EventArgs e) 
         {
+            int reelOne = rng.Next(1, 4);
+            int reelTwo = rng.Next(1, 4);
+            int reelThree = rng.Next(1, 4);
             // get random values for each reel (store each in separate int variable)
 
 
-            // check value of reel 1 with a switch statement and set appropriate image
 
+            switch (reelOne)
+            {
 
-            // check value of reel 2 with a switch statement and set appropriate image
+                case 1:
+                    outputLabel.Text = "cherry";
+                    reel2.Image = (OneArmedBandit.Properties.Resources.cherry_100x125);
+                    break;
+                case 2:
+                    //image of diamond
+                    reel2.Image = OneArmedBandit.Properties.Resources
 
+                    break;
+                case 3:
+                    //image of 7
+                    break;
+            }
+          
 
-            // check value of reel 3 with a switch statement and set appropriate image
-
+            switch (reelTwo)
+            {
+                case 1:
+                    //image of cherry
+                    outputLabel.Text = "cherry";
+                    reel2.Image = (OneArmedBandit.Properties.Resources.cherry_100x125);
+                    break;
+                case 2:
+                    //image of diamond
+                    break;
+                case 3:
+                    //image of 7
+                    break;
+            }
+            
+            switch (reelThree)
+            {
+                case 1:
+                    //image of cherry
+                    outputLabel.Text = "cherry";
+                    reel2.Image = (OneArmedBandit.Properties.Resources.cherry_100x125);
+                    break;
+                case 2:
+                    //image of diamond
+                    break;
+                case 3:
+                    //image of 7
+                    break;
+             
+            }
 
             /// STOP HERE ----------------------------------------------------------
             /// Test to make sure that your program will display random
